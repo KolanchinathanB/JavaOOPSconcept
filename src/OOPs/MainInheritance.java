@@ -5,7 +5,12 @@ import sun.applet.Main;
 class Vehicle {
     int a=10;
     Vehicle(){
-        System.out.println("Vehicle constructor called");       // constructor
+        System.out.println("Vehicle constructor1 called");// constructor
+
+    }
+    Vehicle(String name){
+        this();
+        System.out.println("Vehicle constructor2 called");// constructor
     }
     int gear;
     int speed;
@@ -35,6 +40,7 @@ class Bike extends Vehicle
     Bike(String name,int g,int s,int n)
     {
         //System.out.println(super.msg);    //calling super class variable
+       // super();
         this.gear=g;
         this.noOfwheels=n;
         this.speed=s;
@@ -91,10 +97,12 @@ public class MainInheritance extends Vehicle
     public static void main(String[] args)
     {
         int a=15;
+      //  Vehicle v=new Vehicle("Car");
         Bike bike=new Bike("Honda",4,2,150);  // object
-        Bike bike1=new Bike("Tvs",2,100);
-        Car car=new Car("BMW",5,4,200);
-        Bus bus=new Bus("Bus",5,4,100);
+//        Bike bike1=new Bike("Tvs",2,100);
+//        Car car=new Car("BMW",5,4,200);
+//        Bus bus=new Bus("Bus",5,4,100);
+
     }
     void sum(){
         System.out.println("sub-hi");
@@ -103,7 +111,7 @@ public class MainInheritance extends Vehicle
 }
 
 
-//1. We cannot assign a superclass to the subclass.
+//
 //        2. We cannot extend the final class.
 //        3. A class cannot extend itself.
 //        4. One class can extend only a single class.
