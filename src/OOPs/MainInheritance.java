@@ -1,7 +1,5 @@
 package OOPs;
 
-import sun.applet.Main;
-
 class Vehicle {
     int a=10;
     Vehicle(){
