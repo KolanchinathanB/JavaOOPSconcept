@@ -1,12 +1,17 @@
 package OOPs;
 
+import javax.swing.plaf.nimbus.AbstractRegionPainter;
+
 import static java.lang.Math.pow;
 
-abstract  class Abstraction
+ abstract  class Abstraction
 {
-//    Abstraction(){
-//        System.out.println("Abstract class");      // constructor
-//    }
+    Abstraction(){
+        System.out.println("Abstract class");      // constructor
+    }
+    Abstraction(int a){
+        System.out.println("Abstract class 1");      // constructor
+    }
    static String msg="abstract class";         // static variable
    String message="cannot instantiated";           // non-static variable
    public static void message()
@@ -53,6 +58,7 @@ class Square extends Abstraction
 }
 class Rectangle extends Abstraction
 {
+
       double length;
       double breath;
       Rectangle(double l,double b)
@@ -65,14 +71,25 @@ class Rectangle extends Abstraction
         System.out.println("Rectangle Area is "+(length*breath));
     }
 }
-public class MainAbstraction
+public class MainAbstraction extends Abstraction
 {
     public static void main(String[] args)
     {
+        Abstraction abstraction  = new Abstraction() {
+            @Override
+            void Area() {
 
+            }
+        };
+
+        Abstraction.message();
+        Abstraction a=new Rectangle(12,45);
         Circle c = new Circle(25);                // object creation
         Square s = new Square(21);
         Rectangle r = new Rectangle(12, 45);
+//        Abstraction a=new Circle(50);
+
+//        a.Area();
         c.Area();
         s.Area();
         r.Area();
@@ -83,9 +100,24 @@ public class MainAbstraction
         // abs.msg()            //--->  cannot called
 
     }
+
+    @Override
+    void Area() {
+
+    }
+    void display(){
+        Abstraction a=new Abstraction() {
+            @Override
+            void Area() {
+
+            }
+
+        };
+    }
 }
 
-//abstraction cannot be instanciated , constructor allowed
+
+//abstraction cannot be instantiated , constructor allowed
 // Atleast one abstract method having it's called abstract method
 // class using keyword abstract
 // if inheriting abstract class ,implement all the abstract method

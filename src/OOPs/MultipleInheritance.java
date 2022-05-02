@@ -2,6 +2,7 @@ package OOPs;
 
 interface CreditCard{
  public void creditPayment(int amount);
+
 }
 interface DebitCard{
     public void debitPayment(int amount);
@@ -30,5 +31,6 @@ public class MultipleInheritance extends Payment
         CreditCard c=new Payment();
         d.debitPayment(2000);
         c.creditPayment(3000);
+
     }
 }

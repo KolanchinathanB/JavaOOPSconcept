@@ -105,4 +105,4 @@ package OOPs;
         }
     }
 
-// interface cannot instantiated
+// interface cannot instantiate

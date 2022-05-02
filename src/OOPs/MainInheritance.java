@@ -4,7 +4,6 @@ class Vehicle {
     int a=10;
     Vehicle(){
         System.out.println("Vehicle constructor1 called");// constructor
-
     }
     Vehicle(String name){
         this();
@@ -15,13 +14,6 @@ class Vehicle {
     int noOfwheels;
     String vehicleName;
     String msg="Super Class";
-    static{
-        System.out.println("static block in super class");           // static block
-    }
-
-    {
-        System.out.println("instance block in super class");
-    }
     static void display(){
         System.out.println("static block in super class");           // static block
     }
@@ -52,7 +44,17 @@ class Bike extends Vehicle
         this.noOfwheels=n;
     }
 
-     static void display(){
+    @Override
+    public String toString() {
+        return "Bike{" +
+                "gear=" + gear +
+                ", speed=" + speed +
+                ", noOfwheels=" + noOfwheels +
+                ", vehicleName='" + vehicleName + '\'' +
+                '}';
+    }
+
+    static void display(){
         System.out.println("hi");
     }
 
@@ -90,13 +92,16 @@ class Bus extends Vehicle
 }
 
 
-public class MainInheritance extends Vehicle
+ class MainInheritance extends Vehicle
 {
     public static void main(String[] args)
     {
         int a=15;
       //  Vehicle v=new Vehicle("Car");
-        Bike bike=new Bike("Honda",4,2,150);  // object
+        Bike bike1=new Bike("Honda",4,2,150);  // object
+        Bike bike2=new Bike("Honda",4,2,150);
+        Bike bike3=bike1;
+
 //        Bike bike1=new Bike("Tvs",2,100);
 //        Car car=new Car("BMW",5,4,200);
 //        Bus bus=new Bus("Bus",5,4,100);
@@ -107,7 +112,6 @@ public class MainInheritance extends Vehicle
     }
 
 }
-
 
 //
 //        2. We cannot extend the final class.
