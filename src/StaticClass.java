@@ -1,3 +1,14 @@
+import java.util.ArrayList;
+
+interface New{
+  void sum();
+}
+class NewClass{
+    static void show(){
+        System.out.println("hi");
+    }
+}
+
 public class StaticClass {
     StaticClass(){
         System.out.println("1");
@@ -19,13 +30,20 @@ public class StaticClass {
     }
 
     public static void main(String[] args) {
+          sum(12,0);
         SubClass sb=new SubClass(){
+            int a=10;
             @Override
             public void display() {
 
             }
         };
-        sb.display();
+
+//        sb.display();
+//       // New n=(a,b)->a+b;                     //lambda expression
+//        //New n1=NewClass::show;                // method reference
+//        //n.sum(12,13);
+//
 //        StaticClass st=new StaticClass();
 //        System.out.println(sb.d);
 //        System.out.println(sb.f);
@@ -34,4 +52,9 @@ public class StaticClass {
 //        System.out.println(st.b);
 //        System.out.println(StaticClass.c);
     }
+    static void sum(int a,int b)  {
+
+       // System.out.println(a/b);
+    }
+
 }

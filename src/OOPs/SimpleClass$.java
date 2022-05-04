@@ -4,6 +4,7 @@ package OOPs;
 
 class SuperClass{
     protected int $value=10;
+
     public SuperClass(){
         System.out.println("super class constructor called");
         String name="kolanchi";
@@ -21,23 +22,24 @@ class SuperClass{
 //static
 //const
 //anonymous class -abstraction
-public class SimpleClass extends SuperClass{
+public class SimpleClass$ extends SuperClass{
       protected  int varA=10;
      int val$=10;
-     static int variable=10;
-    public SimpleClass(){
+     static int variable;
+    public SimpleClass$(){
         this("hi");
         //super(12);
         //super();
         //this(12);
-        System.out.println("constructor called");
+        System.out.println("constructor called"+variable);
 
     }
-    SimpleClass(String a){
+    SimpleClass$(String a){
         System.out.println("constructor  2 called");
     }
 
     static {
+        variable=10;
         System.out.println("static block called");
     }
 
@@ -48,7 +50,7 @@ public class SimpleClass extends SuperClass{
     }
 
     public static void main(String[] args) {
-       SimpleClass s=new SimpleClass();
+       SimpleClass$ s=new SimpleClass$();
        System.out.println();
           s.show(12,13);
 
